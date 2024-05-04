@@ -1,0 +1,444 @@
+{
+    "cars": [
+        {
+            "id": "20611884",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g160_revolution-20611884#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G160 Revolution",
+            "description": "118 kW,Mazda MX5 G160 Revolution első tulajdonostól. +Rendszeresen márkaszervizben szervizelt +Vadonatúj...(Hirdetéskód: 20611884)",
+            "image": "https://hasznaltauto.medija.hu/2743115/20611884_1t.jpg?v=1713723702",
+            "price": "7 500 000 Ft",
+            "extraData": "Benzin,2019/3,1 998 cm³,118 kW,160 LE,98 000 km",
+            "distance": ""
+        },
+        {
+            "id": "19775018",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g184_revolution-19775018#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G184 Revolution",
+            "description": "135 kW,Mazda Mx5 ND G184 LSD Vezetékes Carplay, Android auto Teljesen...(Hirdetéskód: 19775018)",
+            "image": "https://hasznaltauto.medija.hu/3658641/19775018_1t.jpg?v=1712471113",
+            "price": "9 290 000 Ft",
+            "extraData": "Benzin,2018/10,1 998 cm³,135 kW,184 LE,29 300 km",
+            "distance": ""
+        },
+        {
+            "id": "20531760",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g184_takumi_nd-20531760#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 RF 2.0i G184 Takumi ND",
+            "description": "135 kW,Takumi felszereltségű Mazda MX-5 RF, snowflake white és fekete (tető)...(Hirdetéskód: 20531760)",
+            "image": "https://hasznaltauto.medija.hu/3985981/20531760_1t.jpg?v=1714343395",
+            "price": "11 900 000 Ft",
+            "extraData": "Benzin,2021/5,1 998 cm³,135 kW,184 LE,78 540 km",
+            "distance": ""
+        },
+        {
+            "id": "20546019",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_skyactiv_kazari_2024-es_modellev-20546019#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i Skyactiv Kazari 2024-es modellév",
+            "description": "135 kW,6 év garanciával legyen az Öné, ez a 2024-es modellévű...(Hirdetéskód: 20546019)",
+            "image": "https://hasznaltauto.medija.hu/9622/20546019_1t.jpg?v=1712220272",
+            "price": "15 317 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,0 km",
+            "distance": ""
+        },
+        {
+            "id": "20652489",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_skyactiv_homura_drive_assist_utolso_darab-20652489#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i Skyactiv Homura Drive Assist Utolsó Darab !",
+            "description": "135 kW,Utolsó darab 2.0 motorral szerelt Mazda MX-5 ST G-184 Homura...(Hirdetéskód: 20652489)",
+            "image": "https://hasznaltauto.medija.hu/16625/20652489_1t.jpg?v=1714719698",
+            "price": "16 120 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,4 km",
+            "distance": ""
+        },
+        {
+            "id": "19860402",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_1.5i_g130_revolution-19860402#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 1.5i G130 Revolution",
+            "description": "96 kW,Üdv! Eladó egy 2016.11.havi, 1.5-ös, Soul-Red fényezésű Mazda MX-5. Az...(Hirdetéskód: 19860402)",
+            "image": "https://hasznaltauto.medija.hu/2434212/19860402_1t.jpg?v=1703363433",
+            "price": "6 399 000 Ft",
+            "extraData": "Benzin,2016/11,1 496 cm³,96 kW,131 LE,139 500 km",
+            "distance": ""
+        },
+        {
+            "id": "20656399",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_1.5i_g130_attraction-20656399#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 1.5I G130 Attraction",
+            "description": "96 kW,Ceramic white színben. Bőr ülések, LED fényszóró, sávtartó, tempomat. Gyári...(Hirdetéskód: 20656399)",
+            "image": "https://hasznaltauto.medija.hu/1406101/20656399_1t.jpg?v=1714805826",
+            "price": "6 499 999 Ft",
+            "extraData": "Benzin,2016/6,1 496 cm³,96 kW,131 LE,64 000 km",
+            "distance": ""
+        },
+        {
+            "id": "20430577",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_1.5i_g130_emotion-20430577#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 1.5i G130 Emotion",
+            "description": "96 kW,Kis autó, hatalmas élmény! Szerencsére új korában kapott egy alváz-...(Hirdetéskód: 20430577)",
+            "image": "https://hasznaltauto.medija.hu/1881883/20430577_1t.jpg?v=1711543451",
+            "price": "6 500 000 Ft",
+            "extraData": "Benzin,2017/6,1 496 cm³,96 kW,131 LE,127 000 km",
+            "distance": ""
+        },
+        {
+            "id": "20563593",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g160_revolution-20563593#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 RF 2.0i G160 Revolution",
+            "description": "118 kW,2017 évjáratú keménytetős MAZDA MX 5 eladó. Friss műszaki vizsgával,...(Hirdetéskód: 20563593)",
+            "image": "https://hasznaltauto.medija.hu/3852877/20563593_1t.jpg?v=1712647053",
+            "price": "6 900 000 Ft",
+            "extraData": "Benzin,2017/6,1 998 cm³,118 kW,160 LE,113 400 km",
+            "distance": ""
+        },
+        {
+            "id": "20503222",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g160_revolution_markakereskedes_50_ezer_km_maxton_desing-20503222#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G160 Revolution Márkakereskedés! 50 EZER KM! MAXTON DESING",
+            "description": "118 kW,Hivatalos egyedi átalakítások: KORMÁNY, KIPUFOGÓ, VILÁGÍTÁS, KÜLSŐ OPTIKAI KIEGÉSZÍTŐK, KN...(Hirdetéskód: 20503222)",
+            "image": "https://hasznaltauto.medija.hu/359/20503222_1t.jpg?v=1711113952",
+            "price": "7 290 000 Ft",
+            "extraData": "Benzin,2016/6,1 998 cm³,118 kW,160 LE,50 706 km",
+            "distance": ""
+        },
+        {
+            "id": "20365175",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g160_revolution_eibach_plusz_ulter-20365175#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G160 Revolution Eibach + Ulter",
+            "description": "118 kW,Az A oszlopig kőfelverődés ellen fóliázva. Eibach rugószett + Ulter...(Hirdetéskód: 20365175)",
+            "image": "https://hasznaltauto.medija.hu/2095841/20365175_1t.jpg?v=1713807638",
+            "price": "7 290 000 Ft",
+            "extraData": "Benzin,2017/7,1 998 cm³,118 kW,160 LE,65 000 km",
+            "distance": ""
+        },
+        {
+            "id": "17563794",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_1.5i_g130_takumi_bezs_bor_bordo_teto-17563794#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 1.5i G130 Takumi BÉZS BŐR/ BORDÓ TETŐ !!",
+            "description": "96 kW,ELSŐ TULAJDONOSTÓL, VÉGIG VEZETETT SZERVIZKÖNYVVEL ( MAZDA ÓBUDA SZÁMLÁIVAL ),...(Hirdetéskód: 17563794)",
+            "image": "https://hasznaltauto.medija.hu/10309/17563794_1t.jpg?v=1708515198",
+            "price": "7 290 000 Ft",
+            "extraData": "Benzin,2018/2,1 496 cm³,96 kW,131 LE,79 000 km",
+            "distance": ""
+        },
+        {
+            "id": "20549426",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_1.5i_g132_challenge-20549426#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 1.5I G132 Challenge",
+            "description": "97 kW,Kihasználatlanság miatt eladó, első tulajdonostól, végig márkaszervízbe hordtam, számlákkal alá...(Hirdetéskód: 20549426)",
+            "image": "https://hasznaltauto.medija.hu/2528532/20549426_1t.jpg?v=1712259684",
+            "price": "7 300 000 Ft",
+            "extraData": "Benzin,2018/12,1 496 cm³,97 kW,132 LE,85 000 km",
+            "distance": ""
+        },
+        {
+            "id": "19287278",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g160_revolution-19287278#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G160 Revolution",
+            "description": "118 kW,Megkímélt gyári állapotban 3. Autóként használt. Nem dohányzó. Végig vezetett...(Hirdetéskód: 19287278)",
+            "image": "https://hasznaltauto.medija.hu/3769993/19287278_1t.jpg?v=1680544906",
+            "price": "7 499 999 Ft",
+            "extraData": "Benzin,2016/4,1 998 cm³,118 kW,160 LE,83 500 km",
+            "distance": ""
+        },
+        {
+            "id": "20584840",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g160_revolution_top-20584840#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 RF 2.0i G160 Revolution Top",
+            "description": "118 kW,Eladó második tulajdonostól egy újonnan Magyarországon a Mazda Óbudánál vásárolt...(Hirdetéskód: 20584840)",
+            "image": "https://hasznaltauto.medija.hu/2490666/20584840_1t.jpg?v=1713209671",
+            "price": "8 990 000 Ft",
+            "extraData": "Benzin,2017/9,1 998 cm³,118 kW,160 LE,79 464 km",
+            "distance": ""
+        },
+        {
+            "id": "20610389",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g184_revolution-20610389#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 RF 2.0i G184 Revolution",
+            "description": "135 kW,(Hirdetéskód: 20610389)",
+            "image": "https://hasznaltauto.medija.hu/2653009/20610389_1t.jpg?v=1713694722",
+            "price": "9 000 000 Ft",
+            "extraData": "Benzin,2019/5,1 998 cm³,135 kW,184 LE,35 000 km",
+            "distance": ""
+        },
+        {
+            "id": "20654000",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g160_revolution_automata-20654000#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 RF 2.0i G160 Revolution (Automata)",
+            "description": "118 kW,Végig garázsban tartott, kevés kilométerrel, nem dohányzó tulajdonos, takaró huzattal....(Hirdetéskód: 20654000)",
+            "image": "https://hasznaltauto.medija.hu/2969279/20654000_1t.jpg?v=1714735811",
+            "price": "9 200 000 Ft",
+            "extraData": "Benzin,2017/8,1 998 cm³,118 kW,160 LE,42 000 km",
+            "distance": ""
+        },
+        {
+            "id": "20483990",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g160_revolution_top-20483990#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G160 Revolution Top",
+            "description": "118 kW,Revolution Top, legmagasabb felszereltség. Bordó tető, bézs belső. Apple Car...(Hirdetéskód: 20483990)",
+            "image": "https://hasznaltauto.medija.hu/3245573/20483990_1t.jpg?v=1711220743",
+            "price": "9 299 000 Ft",
+            "extraData": "Benzin,2018/6,1 998 cm³,118 kW,160 LE,17 960 km",
+            "distance": ""
+        },
+        {
+            "id": "20646076",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g184_revolution-20646076#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G184 Revolution",
+            "description": "135 kW,Eladó szép állapotban, gondosan karbantartott, alacsony futásteljesítményű roadsterem. Friss szervíz,...(Hirdetéskód: 20646076)",
+            "image": "https://hasznaltauto.medija.hu/2430585/20646076_1t.jpg?v=1714555774",
+            "price": "9 490 000 Ft",
+            "extraData": "Benzin,2019/11,1 998 cm³,135 kW,184 LE,34 050 km",
+            "distance": ""
+        },
+        {
+            "id": "20521824",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g184_revolution-20521824#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G184 Revolution",
+            "description": "135 kW,Eladó vagy cserélhető a képeken látható mx5,főleg multivan érdekel, hagyatékból...(Hirdetéskód: 20521824)",
+            "image": "https://hasznaltauto.medija.hu/1667569/20521824_1t.jpg?v=1711552075",
+            "price": "9 499 000 Ft",
+            "extraData": "Benzin,2018/9,1 998 cm³,135 kW,184 LE,9 750 km",
+            "distance": ""
+        },
+        {
+            "id": "20645524",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g184_revolution_bose_vezeteknelkuli_carplay_adaptiv_led-20645524#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G184 Revolution BOSE. VEZETÉKNÉLKÜLI CARPLAY . ADAPTÍV LED",
+            "description": "135 kW,2021.07 havi 184 lóerős MX5 ND élményautó keresi új gazdáját....(Hirdetéskód: 20645524)",
+            "image": "https://hasznaltauto.medija.hu/18532/20645524_1t.jpg?v=1714537277",
+            "price": "9 790 000 Ft",
+            "extraData": "Benzin,2021/7,1 998 cm³,135 kW,184 LE,32 000 km",
+            "distance": ""
+        },
+        {
+            "id": "20654963",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g184_revolution_automata_rf_automata_valto_magyarorszagi_1_tulajos-20654963#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 RF 2.0i G184 Revolution (Automata) RF AUTOMATA VÁLTÓ MAGYARORSZÁGI 1. TULAJOS",
+            "description": "135 kW,MAGYARORSZÁGON ÚJONNAN FORGALOMBA HELYEZETT, 1. TULAJDONOSTÓL. CSAK MAZDA MÁRKASZERVIZBEN SZERVIZELT....(Hirdetéskód: 20654963)",
+            "image": "https://hasznaltauto.medija.hu/269/20654963_1t.jpg?v=1714745332",
+            "price": "9 999 000 Ft",
+            "extraData": "Benzin,2019/5,1 998 cm³,135 kW,184 LE,52 328 km",
+            "distance": ""
+        },
+        {
+            "id": "20466566",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g184_revolution_top_rays_alu_eibach-20466566#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 RF 2.0i G184 Revolution Top Rays alu. Eibach",
+            "description": "135 kW,MX5 csere is. Eladó egy valós Revolution Top felszereltségű G184...(Hirdetéskód: 20466566)",
+            "image": "https://hasznaltauto.medija.hu/1688560/20466566_1t.jpg?v=1712556726",
+            "price": "9 999 999 Ft",
+            "extraData": "Benzin,2021/4,1 998 cm³,135 kW,184 LE,14 700 km",
+            "distance": ""
+        },
+        {
+            "id": "20476395",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g184_revolution_top-20476395#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 2.0i G184 Revolution Top",
+            "description": "135 kW,Az autó gyönyörű állapotban van, csak komoly vételi szándékkal keress(Tesztpilóták,...(Hirdetéskód: 20476395)",
+            "image": "https://hasznaltauto.medija.hu/3433164/20476395_1t.jpg?v=1714623877",
+            "price": "10 700 000 Ft",
+            "extraData": "Benzin,2020/5,1 998 cm³,135 kW,184 LE,24 800 km",
+            "distance": ""
+        },
+        {
+            "id": "20196762",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g184_revolution_top-20196762#sid=40cde418-bc36-413b-9627-e2258936f4ce",
+            "title": "MAZDA MX-5 RF 2.0i G184 Revolution Top",
+            "description": "135 kW,Eladó szeretett hobbi autóm:( Eredetileg két személlyel számoltam, amikor kihoztam...(Hirdetéskód: 20196762)",
+            "image": "https://hasznaltauto.medija.hu/3741945/20196762_1t.jpg?v=1703585798",
+            "price": "10 750 000 Ft",
+            "extraData": "Benzin,2019/4,1 998 cm³,135 kW,184 LE,11 000 km",
+            "distance": ""
+        },
+        {
+            "id": "20415109",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g184_30th_anniversary-20415109#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i G184 30th Anniversary",
+            "description": "135 kW,Jubileumi kiadás, 1667-es számú a 3000-ből. Idén január végén átesett...(Hirdetéskód: 20415109)",
+            "image": "https://hasznaltauto.medija.hu/2028517/20415109_1t.jpg?v=1709110215",
+            "price": "12 490 000 Ft",
+            "extraData": "Benzin,2019/10,1 998 cm³,135 kW,184 LE,49 000 km",
+            "distance": ""
+        },
+        {
+            "id": "19663359",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g184_revolution_markakereskedes18_-ekm_afa-19663359#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i G184 Revolution Márkakereskedés!18. -E.KM! ÁFA!",
+            "description": "135 kW,ÁFÁ-s ÁR NYILTVÉGŰ PÉNZÜGYI LIZINGRE IS MEGVÁSÁROLHATÓ! 2 db gyári...(Hirdetéskód: 19663359)",
+            "image": "https://hasznaltauto.medija.hu/359/19663359_1t.jpg?v=1689938379",
+            "price": "12 499 000 Ft",
+            "extraData": "Benzin,2021/8,1 998 cm³,135 kW,184 LE,18 787 km",
+            "distance": ""
+        },
+        {
+            "id": "20574661",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g184_revolution_top_markakereskedes_18_ezer_km-20574661#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i G184 Revolution Top Márkakereskedés! 18 EZER KM!",
+            "description": "135 kW,Gyári garancia 2025/3/25! Teljes gyári felszereltség! Végig vezetett digitális szervizkönyv!...(Hirdetéskód: 20574661)",
+            "image": "https://hasznaltauto.medija.hu/359/20574661_1t.jpg?v=1713537248",
+            "price": "12 900 000 Ft",
+            "extraData": "Benzin,2022/3,1 998 cm³,135 kW,184 LE,18 282 km",
+            "distance": ""
+        },
+        {
+            "id": "19534479",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_g184_revolution_top_ledborkamerauvegtetoboseulesfutescarplaykeyless-19534479#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i G184 Revolution Top LED.Bőr.Kamera.Üvegtető.BOSE.Ülésfűtés.Carplay.Keyless",
+            "description": "135 kW,HA IMPORT AUTÓ, akkor MATIPRO! Autóbeszámítási lehetőséggel! Akár műszaki garanciával!...(Hirdetéskód: 19534479)",
+            "image": "https://hasznaltauto.medija.hu/17282/19534479_1t.jpg?v=1686663334",
+            "price": "13 190 000 Ft",
+            "extraData": "Benzin,2021/3,1 998 cm³,135 kW,184 LE,15 500 km",
+            "distance": ""
+        },
+        {
+            "id": "20471140",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g184_takumi-20471140#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i G184 Takumi",
+            "description": "135 kW,Eladó egy gyári állapotú 2022 decemberi átadású MX-5 RF G184...(Hirdetéskód: 20471140)",
+            "image": "https://hasznaltauto.medija.hu/2378305/20471140_1t.jpg?v=1710361239",
+            "price": "13 800 000 Ft",
+            "extraData": "Benzin,2022/12,1 998 cm³,135 kW,184 LE,6 827 km",
+            "distance": ""
+        },
+        {
+            "id": "19373772",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_skyactiv_kizuna_navi_markekereskedesbol-19373772#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i Skyactiv Kizuna NAVI! Márkekereskedésből!",
+            "description": "135 kW,A Mazda ikonikus sportautója! Az egyedülálló súlyelosztásnak, az alacsony tömegnek...(Hirdetéskód: 19373772)",
+            "image": "https://hasznaltauto.medija.hu/5905/19373772_1t.jpg?v=1686906653",
+            "price": "14 700 900 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,1 km",
+            "distance": ""
+        },
+        {
+            "id": "19373737",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_skyactiv_kazari_navi_markekereskedesbol-19373737#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i Skyactiv Kazari NAVI! Márkekereskedésből!",
+            "description": "135 kW,A Mazda ikonikus sportautója! Az egyedülálló súlyelosztásnak, az alacsony tömegnek...(Hirdetéskód: 19373737)",
+            "image": "https://hasznaltauto.medija.hu/5905/19373737_1t.jpg?v=1684499266",
+            "price": "14 797 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,1 km",
+            "distance": ""
+        },
+        {
+            "id": "20592744",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_skyactiv_kazari-20592744#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i Skyactiv Kazari",
+            "description": "135 kW,Az autó megtekintéséhez telefonos egyeztetésre van szükség! Hirdetett gépjárműveink állapotfelméréssel,...(Hirdetéskód: 20592744)",
+            "image": "https://hasznaltauto.medija.hu/6237/20592744_1t.jpg?v=1713275091",
+            "price": "14 500 000 Ft",
+            "extraData": "Benzin,2024/4,1 998 cm³,135 kW,184 LE,2 107 km",
+            "distance": ""
+        },
+        {
+            "id": "20329584",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_skyactiv_kazari-20329584#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i Skyactiv Kazari",
+            "description": "135 kW,Márkakereskedésünkben eladó áprilisi beérkezéssel Mazda MX5 G184 ST Kazari Machine...(Hirdetéskód: 20329584)",
+            "image": "https://hasznaltauto.medija.hu/9906/20329584_1t.jpg?v=1707134659",
+            "price": "14 837 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,5 km",
+            "distance": ""
+        },
+        {
+            "id": "20630292",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_skyactiv_exclusive-line_keszleten_veszprem_mazda-20630292#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i Skyactiv Exclusive-Line Készleten ! Veszprém Mazda !",
+            "description": "135 kW,Mazda MX-5 RF (keménytetős) G184 Exclusive-line, Soul Red Crystal fényezéssel,...(Hirdetéskód: 20630292)",
+            "image": "https://hasznaltauto.medija.hu/6706/20630292_1t.jpg?v=1714656609",
+            "price": "15 829 300 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,3 km",
+            "distance": ""
+        },
+        {
+            "id": "20380055",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_skyactiv_kazari_mx-5_2rf_2.0i_skyactiv_kazari_-_2024-es_juniusi_erkezessel-20380055#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i Skyactiv Kazari MX-5 2RF 2.0i Skyactiv Kazari - 2024-es JÚNIUSI érkezéssel!",
+            "description": "135 kW,Foglalja le most új MX-5-ösét 2024. júniusi érkezéssel! Mazda Zakar(Hirdetéskód: 20380055)",
+            "image": "https://hasznaltauto.medija.hu/2407/20380055_1t.jpg?v=1708334780",
+            "price": "16 027 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,3 km",
+            "distance": ""
+        },
+        {
+            "id": "20329759",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_skyactiv_kazari-20329759#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i Skyactiv Kazari",
+            "description": "135 kW,Márkakereskedésünkben eladó áprilisi beérkezéssel Mazda MX5 G184 RF Kazari Machine...(Hirdetéskód: 20329759)",
+            "image": "https://hasznaltauto.medija.hu/9906/20329759_1t.jpg?v=1707136581",
+            "price": "16 307 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,5 km",
+            "distance": ""
+        },
+        {
+            "id": "20434353",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_skyactiv_homura_bilstein_recaro_bbs_hamarosan_atveheto-20434353#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i Skyactiv Homura Bilstein/Recaro/BBS hamarosan átvehető !",
+            "description": "135 kW,Egy igazi ritkasásg, egyéniség nem csak nyárra. 6 /12 év...(Hirdetéskód: 20434353)",
+            "image": "https://hasznaltauto.medija.hu/10430/20434353_1t.jpg?v=1709553532",
+            "price": "16 640 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,2 km",
+            "distance": ""
+        },
+        {
+            "id": "20236117",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_skyactiv_kazari_2024_majusi_erkezes-20236117#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i Skyactiv Kazari 2024. MÁJUSI ÉRKEZÉS",
+            "description": "135 kW,Foglalja le most új MX-5-ösét 2024 Májusi szállítással! Mazda Zakar(Hirdetéskód: 20236117)",
+            "image": "https://hasznaltauto.medija.hu/2407/20236117_1t.jpg?v=1704796549",
+            "price": "15 987 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,3 km",
+            "distance": ""
+        },
+        {
+            "id": "20381448",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_g184_30th_anniversary_magyarorszagi_9600_km_1937_3000_sorszamozott_kiadas-20381448#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i G184 30th Anniversary Magyarországi ! 9600 Km 1937/3000 sorszámozott kiadás",
+            "description": "135 kW,2024.09ig gyári garanciális. Mazda mx modell 30. évfordulójára készített különleges...(Hirdetéskód: 20381448)",
+            "image": "https://hasznaltauto.medija.hu/1595/20381448_1t.jpg?v=1708348602",
+            "price": "15 999 000 Ft",
+            "extraData": "Benzin,2019/9,1 998 cm³,135 kW,184 LE,9 600 km",
+            "distance": ""
+        },
+        {
+            "id": "20370555",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_skyactiv_homura_dras_keszletrol_azonnal_elviheto-20370555#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i Skyactiv Homura DRAS Készletről Azonnal Elvihető !",
+            "description": "135 kW,Azonnal Elvihető Mazda MX-5 RF G-184 Homura Drive Assist Csomaggal...(Hirdetéskód: 20370555)",
+            "image": "https://hasznaltauto.medija.hu/16625/20370555_1t.jpg?v=1708073442",
+            "price": "16 640 000 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,5 km",
+            "distance": ""
+        },
+        {
+            "id": "20620044",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_2.0i_skyactiv_homura_2024-es_modell_utolso_darab-20620044#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 2.0i Skyactiv Homura 2024-es modell UTOLSÓ DARAB!",
+            "description": "135 kW,6 év vagy 150000 Km. teljes körű garanciával készletről azonnal...(Hirdetéskód: 20620044)",
+            "image": "https://hasznaltauto.medija.hu/10300/20620044_1t.jpg?v=1713888286",
+            "price": "16 640 800 Ft",
+            "extraData": "Benzin,2024/4,1 998 cm³,135 kW,184 LE,3 km",
+            "distance": ""
+        },
+        {
+            "id": "20380216",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_skyactiv_homura-20380216#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i Skyactiv Homura",
+            "description": "135 kW,Foglalja le most új Mazda MX-5-ét ÁRGARANCIÁVAL! Mazda Zakar JÚLIUSI...(Hirdetéskód: 20380216)",
+            "image": "https://hasznaltauto.medija.hu/2407/20380216_1t.jpg?v=1708336168",
+            "price": "17 340 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,3 km",
+            "distance": ""
+        },
+        {
+            "id": "20490513",
+            "link": "https://www.hasznaltauto.hu/szemelyauto/mazda/mx-5/mazda_mx-5_rf_2.0i_skyactiv_homura_navi_markekereskedesbol-20490513#sid=c55da8b0-9d0a-4cf9-88f7-e5a51131ead5",
+            "title": "MAZDA MX-5 RF 2.0i Skyactiv Homura NAVI! Márkekereskedésből!",
+            "description": "135 kW,A Mazda ikonikus sportautója! Az egyedülálló súlyelosztásnak, az alacsony tömegnek...(Hirdetéskód: 20490513)",
+            "image": "https://hasznaltauto.medija.hu/5905/20490513_1t.jpg?v=1710849023",
+            "price": "17 257 800 Ft",
+            "extraData": "Benzin,2024,1 998 cm³,135 kW,184 LE,1 km",
+            "distance": ""
+        }
+    ]
+}

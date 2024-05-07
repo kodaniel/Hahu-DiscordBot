@@ -1,6 +1,6 @@
-const fs = require('node:fs');
-const path = require('node:path');
+const sqlite3 = require('sqlite3').verbose();
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { SearchRepository } = require('../repositories');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -10,14 +10,21 @@ module.exports = {
 
   async execute(client, interaction) {
     await interaction.deferReply({ ephemeral: true });
-    const configPath = path.join(__dirname, '../../data/config.json');
 
-    if (!fs.existsSync(configPath))
-      return;
+    let text;
+    let dbConnection;
 
-    let config = JSON.parse(fs.readFileSync(configPath));
-    let text = config.searches.map((item, i) => `${i + 1}. ${item.id} <${item.url}>`).join('\r\n');
-    
-    await interaction.editReply({ content: text, ephemeral: true });
+    try {
+      dbConnection = new sqlite3.Database(process.env.DB_NAME);
+      
+      const searches = new SearchRepository(dbConnection);
+      const data = await searches.listAll();
+
+      text = data.map(item => `[${item.id}] ${item.name}`).join('\r\n');
+    } finally {
+      dbConnection.close();
+    }
+
+    await interaction.editReply({ content: text ? text : 'No searches added yet.', ephemeral: true });
   }
 }

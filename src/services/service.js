@@ -1,120 +1,116 @@
-const fs = require('node:fs');
-const path = require('node:path');
-const _ = require("lodash");
-const async = require('async');
+const sqlite3 = require('sqlite3').verbose();
 const HahuApi = require('./api');
 const { EmbedBuilder } = require('discord.js');
+const { SearchRepository, CarRepository } = require('../repositories');
+const logger = require('winston');
 
-const dataDir = path.join(__dirname, '../..', 'data');
-
-module.exports = class {
-  interval = 10000;
+module.exports = class HahuService {
+  interval;
   #api;
   #client;
+  #timer;
 
   constructor(client) {
     this.#client = client;
     this.#api = new HahuApi();
+    this.interval = process.env.INTERVAL * 1000 * 60;
   }
 
   start() {
-    this.#doWork();
+    logger.info(`Interval: ${process.env.INTERVAL}mins`);
+
+    this.#timer = this.#doWork();
   }
 
-  #doWork() {
-    const searches = this.#getSearches();
+  stop() {
+    if (this.#timer) {
+      this.#timer.stop();
+    }
+  }
+
+  async #doWork() {
+    const dbConnection = new sqlite3.Database(process.env.DB_NAME);
+    const searchesRepo = new SearchRepository(dbConnection);
+    const carsRepo = new CarRepository(dbConnection);
+
+    const searches = await searchesRepo.listAll();
     const this_ = this;
 
     if (searches && searches.length > 0) {
 
-      const oldLists = this.#loadLists(searches);
-
-      const ret = {
-        cars: [],
-      }
-
       for (const item of searches) {
 
-        console.log(`${item.id} keresés figyelése...`);
+        logger.info(`${item.id} keresés figyelése...`);
 
-        this.#api.getCarsAllPages(item.url, 1, ret, function (err, list) {
-          if (err)
-            return console.error(err);
+        const options = {
+          url: item.url,
+          location: item.location,
+          cookie: process.env.COOKIE_DEFAULT,
+          page: 1
+        };
 
-          fs.writeFileSync(path.join(dataDir, item.id + ".json"), JSON.stringify(list, null, 4));
+        try {
+          const cars = await this.#api.getCarsAllPages(options);
 
-          // Diff
-          list.cars.forEach(function (car) {
+          const channel = this_.#client.channels.cache.get(item.channelId);
+          if (!channel)
+            throw `Can't find channel with id ${item.channelId}`;
 
-            let oldItem;
-            if (oldLists[item.id] && oldLists[item.id].cars) {
-              oldItem = _.find(oldLists[item.id].cars, item => item.id == car.id);
-            }
+          await Promise.all(cars.map(async function (car) {
+            let existingItem = await carsRepo.get(car.id);
+            if (existingItem)
+              return;
 
-            if (!oldItem) {
-              console.log(`Új autót találtam! ${car.title}`);
+            logger.info(`Új autót találtam! ${car.title}`);
 
-              const embed = new EmbedBuilder()
-                .setAuthor({ name: 'Használtautó.hu', iconURL: 'https://www.hasznaltauto.hu/favicon.ico', url: 'https://www.hasznaltauto.hu' })
-                .setTitle(car.title)
-                .setDescription(car.description)
-                .setURL(car.link)
-                .setThumbnail(car.image)
-                .addFields(
-                  { name: 'Adatok', value: car.extraData.replaceAll(',', ', ') },
-                  { name: 'Ár', value: car.price, inline: true },
-                  { name: 'Távolság', value: car.distance ? car.distance : '-', inline: true },
-                );
+            car.searchId = item.id;
+            await carsRepo.add(car);
 
-              if (item.channel) {
-                this_.#client.channels.cache.get(item.channel).send({ embeds: [embed] });
-              } else {
-                this_.#client.channel.send({ embeds: [embed] });
-              }
-
-              console.log(car);
-            }
-          });
-
-          item.lastResult = list;
-        })
-      }
-    }
-
-    setTimeout(() => {
-      this.#doWork();
-    }, 10000);
-  }
-
-  #loadLists(searches) {
-    const items = {};
-    if (searches && searches.length > 0) {
-      for (const item of searches) {
-        console.log("A(z) " + item.id + " lista betöltése fájlból...");
-
-        var fileName = path.join(dataDir, item.id + ".json");
-        if (fs.existsSync(fileName)) {
-          try {
-            const data = fs.readFileSync(fileName);
-
-            items[item.id] = JSON.parse(data);
-          } catch (e) {
-            console.log("Fájl formátum hiba!");
-          }
+            sendEmbedMessage(channel, car);
+          }));
+        } catch (err) {
+          logger.error(err);
         }
       }
     }
 
-    return items;
-  }
+    dbConnection.close();
 
-  #getSearches() {
-    const configPath = path.join(dataDir, 'config.json');
-    if (!fs.existsSync(configPath)) {
-      return [];
+    let timer = setTimeout(() => {
+      this.#doWork();
+    }, this.interval);
+
+    return stop;
+
+    function stop() {
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
     }
-
-    const config = JSON.parse(fs.readFileSync(configPath));
-    return config.searches;
   }
+}
+
+function sendEmbedMessage(channel, car) {
+  const embed = new EmbedBuilder()
+    .setAuthor({ name: 'Használtautó.hu', iconURL: 'https://i.imgur.com/ITHCYF3.png', url: 'https://www.hasznaltauto.hu' })
+    .setTitle(car.title)
+    .setDescription(car.description)
+    .setURL(car.link)
+    .setThumbnail(car.image)
+    .addFields(
+      { name: 'Tulajdonságok', value: car.properties.map(p => camelize(p.toLowerCase())).join(', ') },
+      { name: 'Adatok', value: car.extraData.replaceAll(',', ', ') },
+      { name: 'Ár', value: car.price ? car.price : '-', inline: true },
+      { name: 'Távolság', value: car.distance ? car.distance : '-', inline: true },
+    );
+
+  channel.send({ embeds: [embed] });
+}
+
+function camelize(str) {
+  return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+    if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+    return index === 0 ? match.toUpperCase() : match;
+  });
 }

@@ -1,12 +1,6 @@
-const fs = require('node:fs');
-const path = require('node:path');
+const sqlite3 = require('sqlite3').verbose();
 const { SlashCommandBuilder, ChannelType, PermissionFlagsBits } = require('discord.js');
-
-function upsert(array, element, predicate) {
-  const i = array.findIndex(e => predicate(e) === predicate(element));
-  if (i > -1) array[i] = element;
-  else array.push(element);
-}
+const { SearchRepository } = require('../repositories');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -16,7 +10,7 @@ module.exports = {
     .addStringOption(option =>
       option
         .setName('id')
-        .setDescription('Unique id of the query')
+        .setDescription('Unique name of the query')
         .setRequired(true)
         .setMinLength(1)
         .setMaxLength(20))
@@ -25,6 +19,10 @@ module.exports = {
         .setName('url')
         .setDescription('Query url')
         .setRequired(true))
+    .addIntegerOption(option =>
+      option
+        .setName('location')
+        .setDescription('Set the location, copy the id from cookie'))
     .addChannelOption(option =>
       option
         .setName('channel')
@@ -33,25 +31,40 @@ module.exports = {
 
   async execute(client, interaction) {
     await interaction.deferReply({ ephemeral: true });
-    const configPath = path.join(__dirname, '../../data/config.json');
 
-    let config = {};
-    if (fs.existsSync(configPath)) {
-      config = JSON.parse(fs.readFileSync(configPath));
-    } else {
-      config.searches = [];
-    }
-
+    let t = interaction.options.get('channel');
     const data = {
-      id: interaction.options.get('id').value,
+      name: interaction.options.get('id').value,
       url: interaction.options.get('url').value,
-      channel: interaction.options.get('channel')?.value
+      location: interaction.options.get('location')?.value,
+      channelId: interaction.options.get('channel')?.value ?? interaction.channelId
     };
 
-    upsert(config.searches, data, d => d.id);
+    let content;
+    let dbConnection;
+    
+    try {
+      dbConnection = new sqlite3.Database(process.env.DB_NAME);
+      const searches = new SearchRepository(dbConnection);
 
-    fs.writeFileSync(configPath, JSON.stringify(config, null, 4));
+      if (data.location && data.location < 0)
+        throw 'Location id must be positive.';
 
-    await interaction.editReply({ content: `Watcher has been added with the id '${data.id}'.`, ephemeral: true });
+      if (!/^https:\/\/www\.hasznaltauto\.hu\/talalatilista\/([a-zA-Z0-9])*/.test(data.url))
+        throw 'Invalid url.';
+
+      if (await searches.getByName(data.name))
+        throw 'Name already exists.';
+
+      await searches.add(data);
+
+      content = `Watcher has been added with the name '${data.name}'.`;
+    } catch (err) {
+      content = `Failed to add the watcher: ${err}`;
+    } finally {
+      dbConnection.close();
+    }
+
+    await interaction.editReply({ content, ephemeral: true });
   }
 }

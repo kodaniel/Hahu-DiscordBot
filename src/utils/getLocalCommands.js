@@ -1,5 +1,5 @@
 const path = require('path');
-const fs = require('fs');
+const _ = require('lodash');
 const getAllFiles = require('./getAllFiles');
 
 module.exports = (exceptions = []) => {
@@ -10,6 +10,10 @@ module.exports = (exceptions = []) => {
 
   for (const commandFile of commandFiles) {
     const commandObject = require(commandFile);
+
+    if (_.isEmpty(commandObject)) {
+      continue;
+    }
 
     if (exceptions.includes(commandObject.data.name)) {
       continue;

@@ -1,7 +1,11 @@
 const { Client, IntentsBitField } = require('discord.js');
 const eventHandler = require('./handlers/eventHandler')
+const logger = require('./log');
 
 require('dotenv').config();
+require('./dbinit');
+
+logger.info("Environment: " + process.env.NODE_ENV);
 
 const client = new Client({
   intents: [

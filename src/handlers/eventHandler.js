@@ -1,6 +1,7 @@
 const path = require('path');
-const fs = require('fs');
-const getAllFiles = require('../utils/getAllFiles');
+const _ = require('lodash');
+const { getAllFiles } = require('../utils');
+const logger = require('winston');
 
 module.exports = (client) => {
   const eventFolders = getAllFiles(path.join(__dirname, '..', 'events'), true);
@@ -13,7 +14,7 @@ module.exports = (client) => {
     for (const eventFile of eventFiles) {
       const event = require(eventFile);
 
-      if (event.disabled)
+      if (_.isEmpty(event) || event.disabled)
         continue;
 
       if (event.once) {
@@ -22,7 +23,7 @@ module.exports = (client) => {
         client.on(eventName, async (args) => await event.execute(client, args));
       }
 
-      console.log(`[EVENT] Event listener has been added: ${path.basename(eventFile)}`);
+      logger.info(`[EVENT] Event listener has been added: ${path.basename(eventFile)}`);
     }
   }
 }

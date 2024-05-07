@@ -1,34 +1,35 @@
-const _ = require('lodash');
-const fs = require('node:fs');
-const path = require('node:path');
+const sqlite3 = require('sqlite3').verbose();
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { SearchRepository } = require('../repositories');
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('rm')
     .setDescription('Remove search')
-    .addStringOption(option =>
+    .addIntegerOption(option =>
       option
         .setName('id')
-        .setDescription('Unique id of the query')
+        .setDescription('Id of the query')
         .setRequired(true))
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild),
 
   async execute(client, interaction) {
     await interaction.deferReply({ ephemeral: true });
-    
-    const configPath = path.join(__dirname, '../../data/config.json');
 
-    if (!fs.existsSync(configPath))
-      return;
-
-    let config = JSON.parse(fs.readFileSync(configPath));
     const id = interaction.options.get('id').value
 
-    _.remove(config.searches, item => item.id === id);
+    let result;
+    let dbConnection;
 
-    fs.writeFileSync(configPath, JSON.stringify(config, null, 4));
+    try {
+      dbConnection = new sqlite3.Database(process.env.DB_NAME);
 
-    await interaction.editReply({ content: `Watcher has been removed with the id '${id}'.`, ephemeral: true })
+      const searches = new SearchRepository(dbConnection);
+      result = await searches.remove(id);
+    } finally {
+      dbConnection.close();
+    }
+
+    await interaction.editReply({ content: result ? `Watcher has been removed with id ${id}.` : 'No record found with this id.', ephemeral: true })
   }
 }

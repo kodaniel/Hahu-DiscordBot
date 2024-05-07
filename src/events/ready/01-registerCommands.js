@@ -1,6 +1,5 @@
-const areCommandsDifferent = require('../../utils/areCommandsDifferent');
-const getApplicationCommands = require('../../utils/getApplicationCommands');
-const getLocalCommands = require('../../utils/getLocalCommands');
+const { areCommandsDifferent, getApplicationCommands, getLocalCommands } = require('../../utils');
+const logger = require('winston');
 
 module.exports = {
 	once: true,
@@ -21,30 +20,28 @@ module.exports = {
 				if (existingCommand) {
 					if (localCommand.deleted) {
 						await applicationCommands.delete(existingCommand.id);
-						console.log(`🗑 Deleted command "${name}".`);
+						logger.info(`🗑 Deleted command "${name}".`);
 						continue;
 					}
 
 					if (areCommandsDifferent(existingCommand, localCommand)) {
-						await applicationCommands.edit(existingCommand.id, localCommand);
+						await applicationCommands.edit(existingCommand.id, localCommand.data.toJSON());
 
-						console.log(`🔁 Edited command "${name}".`);
+						logger.info(`🔁 Edited command "${name}".`);
 					}
 				} else {
 					if (localCommand.deleted) {
-						console.log(
-							`⏩ Skipping registering command "${name}" as it's set to delete.`
-						);
+						logger.info(`⏩ Skipping registering command "${name}" as it's set to delete.`);
 						continue;
 					}
 
-					await applicationCommands.create(localCommand);
+					await applicationCommands.create(localCommand.data.toJSON());
 
-					console.log(`👍 Registered command "${name}."`);
+					logger.info(`👍 Registered command "${name}."`);
 				}
 			}
 		} catch (error) {
-			console.log(`There was an error: ${error}`);
+			logger.error(`There was an error: ${error}`);
 		}
 	},
 }

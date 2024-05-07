@@ -1,4 +1,5 @@
-const getLocalCommands = require('../../utils/getLocalCommands');
+const { getLocalCommands } = require('../../utils');
+const logger = require('winston');
 
 module.exports = {
   async execute(client, interaction) {
@@ -15,7 +16,7 @@ module.exports = {
 
       await commandObject.execute(client, interaction);
     } catch (error) {
-      console.log(`There was an error running this command: ${error}`);
+      logger.error(`There was an error running this command: ${error}`);
     }
   },
 };

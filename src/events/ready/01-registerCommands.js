@@ -1,14 +1,14 @@
-const { areCommandsDifferent, getApplicationCommands, getLocalCommands } = require('../../utils');
-const logger = require('winston');
+import { areCommandsDifferent, getApplicationCommands, getLocalCommands } from '#utils';
+import logger from 'winston';
 
-module.exports = {
+export default {
 	once: true,
 	async execute(client) {
 		try {
-			const localCommands = getLocalCommands();
+			const localCommands = await getLocalCommands();
 			const applicationCommands = await getApplicationCommands(
 				client,
-				process.env.GUILD_ID
+				process.env.DISCORD_GUILD_ID
 			);
 
 			for (const localCommand of localCommands) {

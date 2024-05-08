@@ -1,10 +1,10 @@
-const sqlite3 = require('sqlite3').verbose();
-const HahuApi = require('./api');
-const { EmbedBuilder } = require('discord.js');
-const { SearchRepository, CarRepository } = require('../repositories');
-const logger = require('winston');
+import sqlite3 from 'sqlite3';
+import HahuApi from './api.js';
+import { EmbedBuilder } from 'discord.js';
+import { SearchRepository, CarRepository } from '../repositories/index.js';
+import logger from 'winston';
 
-module.exports = class HahuService {
+export default class HahuService {
   interval;
   #api;
   #client;
@@ -17,7 +17,7 @@ module.exports = class HahuService {
   }
 
   start() {
-    logger.info(`Interval: ${process.env.INTERVAL}mins`);
+    logger.info(`⏱️ Polling interval: ${process.env.INTERVAL} mins`);
 
     this.#timer = this.#doWork();
   }
@@ -40,7 +40,7 @@ module.exports = class HahuService {
 
       for (const item of searches) {
 
-        logger.info(`${item.id} keresés figyelése...`);
+        logger.info(`Fetching search id #${item.id}...`);
 
         const options = {
           url: item.url,
@@ -54,14 +54,14 @@ module.exports = class HahuService {
 
           const channel = this_.#client.channels.cache.get(item.channelId);
           if (!channel)
-            throw `Can't find channel with id ${item.channelId}`;
+            throw `Can't find channel with id #${item.channelId}`;
 
           await Promise.all(cars.map(async function (car) {
             let existingItem = await carsRepo.get(car.id);
             if (existingItem)
               return;
 
-            logger.info(`Új autót találtam! ${car.title}`);
+            logger.info(`🚗 Found new car! ${car.title}`);
 
             car.searchId = item.id;
             await carsRepo.add(car);

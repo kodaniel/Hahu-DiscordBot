@@ -1,9 +1,9 @@
-const request = require('request');
-const cheerio = require('cheerio');
-const scrape = require('scrape-it');
-const logger = require('winston');
+import request from 'request';
+import cheerio from 'cheerio';
+import scrape from 'scrape-it';
+import logger from 'winston';
 
-module.exports = class HttpApi {
+export default class HttpApi {
   async getCarsAllPages({ url, location, cookie, page }) {
     if (page > 1) {
       url += '/page' + page

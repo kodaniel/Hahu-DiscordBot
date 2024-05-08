@@ -1,9 +1,9 @@
-const areCommandsDifferent = require('./areCommandsDifferent');
-const getAllFiles = require('./getAllFiles');
-const getApplicationCommands = require('./getApplicationCommands');
-const getLocalCommands = require('./getLocalCommands');
+import areCommandsDifferent from './areCommandsDifferent.js';
+import getAllFiles from './getAllFiles.js';
+import getApplicationCommands from './getApplicationCommands.js';
+import getLocalCommands from './getLocalCommands.js';
 
-module.exports = {
+export {
   areCommandsDifferent,
   getAllFiles,
   getApplicationCommands,

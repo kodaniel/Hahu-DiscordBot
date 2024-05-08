@@ -1,7 +1,7 @@
-const Car = require('./car');
-const Search = require('./search');
+import Car from './car.js';
+import Search from './search.js';
 
-module.exports = {
+export {
   Car,
   Search
 }

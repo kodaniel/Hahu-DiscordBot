@@ -1,4 +1,4 @@
-module.exports = class SearchRepository {
+export default class SearchRepository {
 
   constructor(dbConnection) {
     this.db = dbConnection;

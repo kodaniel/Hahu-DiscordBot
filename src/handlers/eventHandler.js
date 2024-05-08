@@ -1,9 +1,11 @@
-const path = require('path');
-const _ = require('lodash');
-const { getAllFiles } = require('../utils');
-const logger = require('winston');
+import path from 'path';
+import _ from 'lodash';
+import { fileURLToPath, pathToFileURL } from 'url';
+import { getAllFiles } from '#utils';
+import logger from 'winston';
 
-module.exports = (client) => {
+export default async (client) => {
+  let __dirname = path.dirname(fileURLToPath(import.meta.url));
   const eventFolders = getAllFiles(path.join(__dirname, '..', 'events'), true);
 
   for (const eventFolder of eventFolders) {
@@ -12,7 +14,7 @@ module.exports = (client) => {
 
     const eventName = eventFolder.replace(/\\/g, '/').split('/').pop();
     for (const eventFile of eventFiles) {
-      const event = require(eventFile);
+      const { default: event } = await import(pathToFileURL(eventFile));
 
       if (_.isEmpty(event) || event.disabled)
         continue;
@@ -23,7 +25,7 @@ module.exports = (client) => {
         client.on(eventName, async (args) => await event.execute(client, args));
       }
 
-      logger.info(`[EVENT] Event listener has been added: ${path.basename(eventFile)}`);
+      logger.info(`👍 Event listener has been added: ${path.basename(eventFile)}`);
     }
   }
 }

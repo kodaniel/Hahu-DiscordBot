@@ -1,4 +1,4 @@
-module.exports = class CarRepository {
+export default class CarRepository {
 
   constructor(dbConnection) {
     this.db = dbConnection;

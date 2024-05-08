@@ -1,9 +1,7 @@
-const connectionString = require('./connectionString');
-const HttpApi = require('./api');
-const HahuService = require('./service');
+import HttpApi from './api.js';
+import HahuService from './service.js';
 
-module.exports = {
-  connectionString,
+export {
   HttpApi,
   HahuService
 };

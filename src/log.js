@@ -1,11 +1,14 @@
-const winston = require('winston');
+import winston from 'winston';
 
-const files = new winston.transports.File({ filename: 'combined.log' });
-winston.add(files);
+const myFormat = winston.format.printf(({ level, message, timestamp }) => {
+  return `${timestamp} [${level}]: ${message}`;
+});
 
-if (process.env.NODE_ENV !== 'production') {
-  const console = new winston.transports.Console();
-  winston.add(console);
-}
+const console = new winston.transports.Console({
+  format: winston.format.combine(winston.format.timestamp(), myFormat),
+  level: process.env.NODE_ENV !== 'production' ? 'verbose' : 'info'
+});
 
-module.exports = winston;
+winston.add(console);
+
+export default winston;

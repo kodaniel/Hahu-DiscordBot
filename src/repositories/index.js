@@ -1,7 +1,7 @@
-const CarRepository = require('./carRepository');
-const SearchRepository = require('./searchRepository');
+import CarRepository from './carRepository.js';
+import SearchRepository from './searchRepository.js';
 
-module.exports = {
+export {
   CarRepository,
   SearchRepository
 };

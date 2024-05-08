@@ -1,11 +1,11 @@
-const { getLocalCommands } = require('../../utils');
-const logger = require('winston');
+import { getLocalCommands } from '../../utils/index.js';
+import logger from 'winston';
 
-module.exports = {
+export default {
   async execute(client, interaction) {
     if (!interaction.isChatInputCommand()) return;
 
-    const localCommands = getLocalCommands();
+    const localCommands = await getLocalCommands();
 
     try {
       const commandObject = localCommands.find(
@@ -18,5 +18,5 @@ module.exports = {
     } catch (error) {
       logger.error(`There was an error running this command: ${error}`);
     }
-  },
+  }
 };

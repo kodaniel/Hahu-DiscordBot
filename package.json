@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "debug": "nodemon src/index.js --env-file=.development.env --inspect",
-    "production": "node . --production"
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsup src/index.ts --minify"
   },
   "keywords": [],
   "author": "Dániel Kovács",
@@ -20,5 +22,15 @@
     "scrape-it": "^6.1.2",
     "sqlite3": "^5.1.7",
     "winston": "^3.13.0"
+  },
+  "imports": {
+    "#utils": "./src/utils/index.js",
+    "#events/*": "./src/events/*.js",
+    "#commands/*": "./src/commands/*.js"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.5"
   }
 }

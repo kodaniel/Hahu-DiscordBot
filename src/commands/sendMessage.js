@@ -1,6 +1,6 @@
-const { SlashCommandBuilder, ChannelType } = require('discord.js');
+import { SlashCommandBuilder, ChannelType } from 'discord.js';
 
-module.exports = {
+export default {
   data: new SlashCommandBuilder()
     .setName('ping')
     .setDescription('anyád')

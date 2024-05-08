@@ -1,12 +1,12 @@
-const Service = require('../../services/service')
-const logger = require('winston');
+import { HahuService } from '../../services/index.js';
+import logger from 'winston';
 
-module.exports = {
+export default {
 	once: true,
 	//disabled: true,
 	async execute(client) {
-		logger.info(`${client.user.tag} is online.`);
+		logger.info(`🤖 ${client.user.tag} bot is ready.`);
 
-		new Service(client).start();
+		new HahuService(client).start();
 	},
 };

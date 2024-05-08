@@ -1,8 +1,8 @@
-const sqlite3 = require('sqlite3').verbose();
-const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const { SearchRepository } = require('../repositories');
+import sqlite3 from 'sqlite3';
+import { SlashCommandBuilder, PermissionFlagsBits } from 'discord.js';
+import { SearchRepository } from '../repositories/index.js';
 
-module.exports = {
+export default {
   data: new SlashCommandBuilder()
     .setName('queries')
     .setDescription('List all queries')

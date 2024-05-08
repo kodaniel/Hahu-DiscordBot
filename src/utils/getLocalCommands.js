@@ -1,15 +1,17 @@
-const path = require('path');
-const _ = require('lodash');
-const getAllFiles = require('./getAllFiles');
+import path from 'path';
+import _ from 'lodash';
+import { fileURLToPath, pathToFileURL } from 'url';
+import getAllFiles from './getAllFiles.js';
 
-module.exports = (exceptions = []) => {
+export default async (exceptions = []) => {
   let localCommands = [];
 
+  let __dirname = path.dirname(fileURLToPath(import.meta.url));
   const commandsPath = path.join(__dirname, '..', 'commands');
   const commandFiles = getAllFiles(commandsPath);
 
   for (const commandFile of commandFiles) {
-    const commandObject = require(commandFile);
+    const { default: commandObject } = await import(pathToFileURL(commandFile));
 
     if (_.isEmpty(commandObject)) {
       continue;
@@ -21,6 +23,6 @@ module.exports = (exceptions = []) => {
 
     localCommands.push(commandObject);
   }
-  
+
   return localCommands;
 }

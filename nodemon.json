@@ -1,3 +1,10 @@
-{   
-    "ignore": ["data/*.json", "README"] 
+{
+    "watch": [
+        "src"
+    ],
+    "ext": "ts,json",
+    "ignore": [
+        "README"
+    ],
+    "exec": "ts-node src/index.ts"
 }

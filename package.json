@@ -2,12 +2,12 @@
   "name": "hahu",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
-  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "node dist/index.js",
-    "build": "tsup src/index.ts --minify"
+    "build": "tsc -p .",
+    "build:watch": "tsc -p . --watch",
+    "start": "tsc && node dist/index.js",
+    "dev": "nodemon --exec node --loader ts-node/esm ./src/index.ts"
   },
   "keywords": [],
   "author": "Dániel Kovács",
@@ -24,13 +24,14 @@
     "winston": "^3.13.0"
   },
   "imports": {
-    "#utils": "./src/utils/index.js",
+    "#utils/*": "./src/utils/index.ts",
     "#events/*": "./src/events/*.js",
     "#commands/*": "./src/commands/*.js"
   },
   "devDependencies": {
-    "tsup": "^8.0.2",
-    "tsx": "^4.9.3",
+    "@types/node": "^20.12.11",
+    "@types/request": "^2.48.12",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
 }

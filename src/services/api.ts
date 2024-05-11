@@ -2,7 +2,7 @@ import request from 'request';
 import cheerio from 'cheerio';
 import scrape from 'scrape-it';
 import logger from 'winston';
-import { Car } from '../persistance';
+import { Car } from '../persistence';
 import { camelize } from '../utils';
 
 export type PagedOptions = {

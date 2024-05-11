@@ -1,6 +1,6 @@
 import { Database } from 'sqlite3';
 import { SlashCommandBuilder, ChannelType, PermissionFlagsBits, Client, Interaction, ChatInputCommandInteraction } from 'discord.js';
-import { Search, SearchRepository } from '../persistance';
+import { Search, SearchRepository } from '../persistence';
 import { Command } from '../interfaces';
 
 export default class AddCommand extends Command {

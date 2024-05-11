@@ -1,7 +1,7 @@
 import sqlite3 from 'sqlite3';
 import { HttpApi, PagedOptions } from './api';
 import { Client, EmbedBuilder, TextChannel } from 'discord.js';
-import { Car, SearchRepository, CarRepository } from '../persistance';
+import { Car, SearchRepository, CarRepository } from '../persistence';
 import logger from 'winston';
 
 export class HahuService {

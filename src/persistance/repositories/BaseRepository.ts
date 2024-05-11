@@ -20,7 +20,8 @@ export abstract class BaseRepository<TEntity extends IEntity> {
       this.db.get('SELECT * FROM `' + this.dbTable + '` WHERE `id` = ?', id, (err, row) => {
         if (err)
           reject(err);
-        resolve(row as TEntity);
+        else
+          resolve(row as TEntity);
       });
     });
   }
@@ -30,23 +31,24 @@ export abstract class BaseRepository<TEntity extends IEntity> {
       this.db.all('SELECT * FROM `' + this.dbTable + '`', (err, rows) => {
         if (err)
           reject(err);
-        resolve(rows as TEntity[]);
+        else
+          resolve(rows as TEntity[]);
       });
     });
   }
 
   public async add(data: TEntity): Promise<number> {
     return new Promise((resolve, reject) => {
-      let columns = Object.keys(data).join(', ');
-      let values = Object.values(data);
+      let columns = Object.keys(data).filter(c => data[c] !== undefined).join(',');
+      let values = Object.values(data).filter(c => c !== undefined);
 
-      this.db.run('INSERT INTO `' + this.dbTable + '` (' + columns + ') VALUES (' + '? '.repeat(columns.length) + ')',
-        values,
-        function (err) {
-          if (err)
-            reject(err);
+      const sql = 'INSERT INTO `' + this.dbTable + '` (' + columns + ') VALUES (' + new Array(values.length).fill('?').join(',') + ')';
+      this.db.run(sql, values, function (err) {
+        if (err)
+          reject(err);
+        else
           resolve(this.lastID);
-        });
+      });
     });
   }
 
@@ -62,7 +64,8 @@ export abstract class BaseRepository<TEntity extends IEntity> {
       this.db.run('UPDATE `' + this.dbTable + '` SET ' + columns + ' WHERE id = $id', obj, function (err) {
         if (err)
           reject(err);
-        resolve(this.changes);
+        else
+          resolve(this.changes);
       });
     });
   }
@@ -72,7 +75,8 @@ export abstract class BaseRepository<TEntity extends IEntity> {
       this.db.run('DELETE FROM `' + this.dbTable + '` WHERE `id` = ?', id, function (err) {
         if (err)
           reject(err);
-        resolve(this.changes);
+        else
+          resolve(this.changes);
       });
     });
   }

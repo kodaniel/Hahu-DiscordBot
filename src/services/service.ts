@@ -22,7 +22,7 @@ export class HahuService {
     this.api = new HttpApi();
     this.dbName = DB_NAME;
 
-    let interval = parseInt(INTERVAL || '') || 10;
+    let interval = parseFloat(INTERVAL || '') || 10;
     this.interval = interval * 1000 * 60;
   }
 
@@ -30,8 +30,18 @@ export class HahuService {
     this.interval = interval * 1000 * 60;
   }
 
+  private getIntervalText() {
+    let time: string;
+    if (this.interval >= 60000)
+      time = `${this.interval / 60000} mins`;
+    else
+      time = `${this.interval / 1000} secs`;
+
+    return time;
+  }
+
   public async start() {
-    logger.info(`⏱️ Polling interval: ${process.env.INTERVAL} mins`);
+    logger.info(`⏱️ Polling interval: ${this.getIntervalText()}`);
 
     this.stopCallback = await this.doWork();
   }
@@ -64,12 +74,15 @@ export class HahuService {
         };
 
         try {
-          const channel = this_.client.channels.cache.get(item.channelId) as TextChannel;
+          const channel = this_.client.channels.cache.get(item.channelId!) as TextChannel;
           if (!channel)
             throw `Can't find channel with id #${item.channelId}`;
 
           const cars = await this.api.getCarsAllPages(options);
           await Promise.all(cars.map(async function (car) {
+            if (!car.id)
+              return;
+
             let existingItem = await carsRepo.get(car.id);
             if (existingItem)
               return;
@@ -79,7 +92,7 @@ export class HahuService {
             car.searchId = item.id;
             await carsRepo.add(car);
 
-            sendEmbedMessage(channel, car);
+            this_.sendEmbedMessage(channel, car);
           }));
         } catch (err) {
           logger.error(err);
@@ -102,21 +115,21 @@ export class HahuService {
       }
     }
   }
-}
 
-function sendEmbedMessage(channel: TextChannel, car: Car) {
-  const embed = new EmbedBuilder()
-    .setAuthor({ name: 'Használtautó.hu', iconURL: 'https://i.imgur.com/ITHCYF3.png', url: 'https://www.hasznaltauto.hu' })
-    .setTitle(car.title)
-    .setDescription(car.description)
-    .setURL(car.link)
-    .setThumbnail(car.image)
-    .addFields(
-      { name: 'Tulajdonságok', value: car.properties },
-      { name: 'Adatok', value: car.extraData },
-      { name: 'Ár', value: car.price ? car.price : '-', inline: true },
-      { name: 'Távolság', value: car.distance ? car.distance : '-', inline: true },
-    );
+  private sendEmbedMessage(channel: TextChannel, car: Car) {
+    const embed = new EmbedBuilder()
+      .setAuthor({ name: 'Használtautó.hu', iconURL: 'https://i.imgur.com/ITHCYF3.png', url: 'https://www.hasznaltauto.hu' })
+      .setTitle(car.title)
+      .setDescription(car.description)
+      .setURL(car.link)
+      .setThumbnail(car.image)
+      .addFields(
+        { name: 'Tulajdonságok', value: car.properties.replaceAll(',', ', ') },
+        { name: 'Adatok', value: car.extraData.replaceAll(',', ', ') },
+        { name: 'Ár', value: car.price ? car.price : '-', inline: true },
+        { name: 'Távolság', value: car.distance ? car.distance : '-', inline: true },
+      );
 
-  channel.send({ embeds: [embed] });
+    channel.send({ embeds: [embed] });
+  }
 }

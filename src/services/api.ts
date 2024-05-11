@@ -3,6 +3,7 @@ import cheerio from 'cheerio';
 import scrape from 'scrape-it';
 import logger from 'winston';
 import { Car } from '../persistance';
+import { camelize } from '../utils';
 
 export type PagedOptions = {
   url: string;
@@ -90,11 +91,12 @@ export class HttpApi {
               extraData: ".talalatisor-info.adatok .info",
               distance: ".talalatisor-info tavolsaginfo .tavolsag_talalati",
               properties: {
-                listItem: ".cimke-lista .label",
-                convert: function (props: string[]) {
-                  return props.map(p => camelize(p.toLowerCase())).join(', ')
-                }
+                listItem: ".cimke-lista .label"
               }
+            },
+            convert: function (obj: any) {
+              obj.properties = obj.properties.map((p: string) => camelize(p.toLowerCase())).join(',');
+              return obj;
             }
           }
         })
@@ -103,11 +105,4 @@ export class HttpApi {
       });
     });
   }
-}
-
-function camelize(str: string): string {
-  return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-    if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
-    return index === 0 ? match.toUpperCase() : match;
-  });
 }

@@ -59,6 +59,7 @@ export default class AddCommand extends Command {
       if (await searches.getByName(searchData.name))
         throw 'Name already exists.';
 
+      searchData.location = 0;
       await searches.add(searchData);
 
       content = `Watcher has been added with the name '${searchData.name}'.`;

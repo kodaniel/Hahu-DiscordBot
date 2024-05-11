@@ -12,7 +12,8 @@ export class CarRepository extends BaseRepository<Car> {
       this.db.all('SELECT * FROM `' + this.dbTable + '` WHERE searchId = ?', searchId, (err, rows) => {
         if (err)
           reject(err);
-        resolve(rows as Car[]);
+        else
+          resolve(rows as Car[]);
       });
     });
   }

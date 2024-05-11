@@ -12,7 +12,8 @@ export class SearchRepository extends BaseRepository<Search> {
       this.db.get('SELECT * FROM `searches` WHERE `name` = ?', name, (err, row) => {
         if (err)
           reject(err);
-        resolve(row as Search);
+        else
+          resolve(row as Search);
       });
     });
   }

@@ -1,8 +1,8 @@
 import { IEntity } from "./IEntity";
 
 export class Car implements IEntity {
-  id: number = 0;
-  searchId: number = 0;
+  id?: number;
+  searchId?: number;
   title: string = '';
   description: string = '';
   image: string = '';

@@ -8,7 +8,7 @@ export default async (client: Client) => {
   const eventFolders = getAllFiles(path.join(__dirname, '..', 'events'), true);
 
   for (const eventFolder of eventFolders) {
-    const eventFiles = getAllFiles(eventFolder).filter(file => file.endsWith('.ts'));
+    const eventFiles = getAllFiles(eventFolder);
     eventFiles.sort((a, b) => a.localeCompare(b));
 
     const eventName = eventFolder.replace(/\\/g, '/').split('/').pop() as string;

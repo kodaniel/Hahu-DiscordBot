@@ -6,7 +6,7 @@ export default async (exceptions: string[] = []): Promise<Command[]> => {
   let localCommands: Command[] = [];
 
   const commandsPath = path.join(__dirname, '..', 'commands');
-  const commandFiles = getAllFiles(commandsPath).filter(file => file.endsWith('.ts'));
+  const commandFiles = getAllFiles(commandsPath);
 
   for (const commandFile of commandFiles) {
     const command = (await import(commandFile))?.default;

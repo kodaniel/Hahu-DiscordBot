@@ -31,7 +31,7 @@ export default class DiscordClient extends Client implements IDiscordClient {
       throw 'Database name is missing';
     }
 
-    initializeDb(DB_NAME);
+    await initializeDb(DB_NAME);
 
     await this.registerEvents();
 

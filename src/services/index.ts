@@ -1,5 +1,5 @@
-import { HttpApi } from './api';
-import { HahuService } from './service';
+import { HttpApi } from './HttpApi';
+import { HahuService } from './HahuService';
 
 export {
   HttpApi,

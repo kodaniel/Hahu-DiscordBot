@@ -69,7 +69,7 @@ export class HttpApi {
           cars: {
             listItem: ".row.talalati-sor",
             data: {
-              id: {
+              ref: {
                 selector: ".cim-kontener h3 a",
                 attr: "href",
                 convert: function (s) {

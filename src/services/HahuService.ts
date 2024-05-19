@@ -1,5 +1,5 @@
 import sqlite3 from 'sqlite3';
-import { HttpApi, PagedOptions } from './api';
+import { HttpApi, PagedOptions } from './HttpApi';
 import { Client, EmbedBuilder, TextChannel } from 'discord.js';
 import { Car, SearchRepository, CarRepository } from '../persistence';
 import logger from 'winston';
@@ -80,10 +80,10 @@ export class HahuService {
 
           const cars = await this.api.getCarsAllPages(options);
           await Promise.all(cars.map(async function (car) {
-            if (!car.id)
+            if (!car.ref)
               return;
 
-            let existingItem = await carsRepo.get(car.id);
+            let existingItem = await carsRepo.getByRefInSearch(item.id!, car.ref);
             if (existingItem)
               return;
 

@@ -3,6 +3,7 @@ import { IEntity } from "./IEntity";
 export class Car implements IEntity {
   id?: number;
   searchId?: number;
+  ref: string = '';
   title: string = '';
   description: string = '';
   image: string = '';

@@ -27,7 +27,8 @@ export async function initializeDb(connectionString: string) {
         // Create 'cars' table
         db!.run('CREATE TABLE IF NOT EXISTS "cars" ( \
           "id" INTEGER NOT NULL, \
-          "searchId"	INTEGER NOT NULL, \
+          "searchId" INTEGER NOT NULL, \
+          "ref" TEXT, \
           "title" TEXT, \
           "description" TEXT, \
           "image" TEXT, \
@@ -36,7 +37,7 @@ export async function initializeDb(connectionString: string) {
           "properties" TEXT, \
           "price" TEXT, \
           "distance" REAL, \
-          PRIMARY KEY("id"), \
+          PRIMARY KEY("id" AUTOINCREMENT), \
           FOREIGN KEY("searchId") REFERENCES "searches"("id"));')
       });
     } catch (err) {
